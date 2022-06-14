@@ -3,6 +3,6 @@
   hosts: all
   tasks:
     - name: Install required dependencies
-      ansible.builtin.shell: ./scripts/install-required-dependencies.sh
+      ansible.builtin.shell: /vagrant/ansible-playbooks/scripts/install-required-dependencies.sh
     - name: Install firecracker-containerd
-      ansible.builtin.shell: ./scripts/install-firecracker-containerd.sh
+      ansible.builtin.shell: /vagrant/ansible-playbooks/scripts/install-firecracker-containerd.sh
