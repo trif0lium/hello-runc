@@ -1,0 +1,10 @@
+name: firecracker-containerd
+on:
+  push:
+    branches:
+      - main
+jobs:
+  firecracker-containerd:
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v2
