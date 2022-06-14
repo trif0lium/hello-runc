@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
   end
   config.ssh.insert_key = false
   config.vm.provision "ansible" do |ansible|
+    ansible.become = true
     ansible.verbose = "v"
     ansible.playbook = "ansible-playbooks/firecracker-containerd.yml"
   end
