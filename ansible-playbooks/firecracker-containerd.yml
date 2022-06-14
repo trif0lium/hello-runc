@@ -10,5 +10,7 @@
       ansible.builtin.shell: |
         source ~/.bashrc
         /bin/sh /vagrant/ansible-playbooks/scripts/install-firecracker-containerd.sh
+      args:
+        executable: /bin/bash
     - name: Start firecracker-containerd
       ansible.builtin.shell: firecracker-containerd --config /etc/firecracker-containerd/config.toml
