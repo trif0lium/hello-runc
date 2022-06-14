@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     v.memory = 10240
     v.cpus = 4
   end
-  config.vm.insert_key = false
+  config.ssh.insert_key = false
   config.vm.provision "ansible" do |ansible|
     ansible.verbose = "v"
     ansible.playbook = "ansible-playbooks/firecracker-containerd.yml"
