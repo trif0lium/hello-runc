@@ -8,4 +8,5 @@ jobs:
     runs-on: macos-10.15
     steps:
       - uses: actions/checkout@v2
+      - run: brew install ansible
       - run: vagrant up
