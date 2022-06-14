@@ -1,0 +1,8 @@
+---
+- name: firecracker-containerd
+  hosts: all
+  tasks:
+    - name: Install required dependencies
+      ansible.builtin.shell: scripts/install-required-dependencies.sh
+    - name: Install firecracker-containerd
+      ansible.builtin.shell: scripts/install-firecracker-containerd.sh
