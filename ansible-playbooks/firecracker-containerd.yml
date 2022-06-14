@@ -6,11 +6,13 @@
       ansible.builtin.shell: /bin/sh /vagrant/ansible-playbooks/scripts/install-required-dependencies.sh
     - name: Reset SSH connection
       meta: reset_connection
-    - name: Install firecracker-containerd
+    - name: ~/.bashrc
       ansible.builtin.shell: |
         source ~/.bashrc
-        /bin/sh /vagrant/ansible-playbooks/scripts/install-firecracker-containerd.sh
       args:
         executable: /bin/bash
+    - name: Install firecracker-containerd
+      ansible.builtin.shell: |
+        /bin/sh /vagrant/ansible-playbooks/scripts/install-firecracker-containerd.sh
     - name: Start firecracker-containerd
       ansible.builtin.shell: firecracker-containerd --config /etc/firecracker-containerd/config.toml
